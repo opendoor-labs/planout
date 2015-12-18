@@ -98,10 +98,13 @@ module PlanOut
 
     def get_segment
       a = Assignment.new(@name)
-      binding.pry
+      units = []
+      @primary_unit.map(&:to_sym).each do |unit|
+        units << @inputs[unit]
+      end
       a[:segment] = PlanOut::RandomInteger.new(min: 0,
                                              max: @num_segments - 1,
-                                             unit: @inputs[@primary_unit.map(&:to_sym)])
+                                             unit: units)
       a[:segment]
     end
 
