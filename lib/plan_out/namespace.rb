@@ -98,6 +98,7 @@ module PlanOut
 
     def get_segment
       a = Assignment.new(@name)
+      binding.pry
       a[:segment] = PlanOut::RandomInteger.new(min: 0,
                                              max: @num_segments - 1,
                                              unit: @inputs[@primary_unit.map(&:to_sym)])
