@@ -100,7 +100,7 @@ module PlanOut
       a = Assignment.new(@name)
       a[:segment] = PlanOut::RandomInteger.new(min: 0,
                                              max: @num_segments - 1,
-                                             unit: @inputs[@primary_unit.to_sym])
+                                             unit: @inputs[@primary_unit.map(&:to_sym)])
       a[:segment]
     end
 
