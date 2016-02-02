@@ -99,6 +99,7 @@ module PlanOut
         num_draws = choices.length
       end
 
+      binding.pry
       n = choices.length
       while n > 0
         n -= 1
@@ -108,6 +109,7 @@ module PlanOut
         choices[i], choices[n] = choices[n], choices[i]
       end
   
+      binding.pry
       choices.slice(0...num_draws)
     end
   end
