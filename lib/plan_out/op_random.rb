@@ -102,7 +102,9 @@ module PlanOut
       n = choices.length
       while n > 0
         n -= 1
+        binding.pry
         i = get_hash([n]) % (n+1)
+        binding.pry
         choices[i], choices[n] = choices[n], choices[i]
       end
   
