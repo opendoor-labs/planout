@@ -20,7 +20,6 @@ module PlanOut
       last_hex = (Digest::SHA1.hexdigest(x))[0..14]
       binding.pry
       last_hex.to_i(16)
-      binding.pry
     end
 
     def get_uniform(min_val = 0.0, max_val = 1.0, appended_unit = nil)
