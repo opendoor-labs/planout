@@ -16,9 +16,8 @@ module PlanOut
       salty = "#{@mapper.experiment_salt}.#{salt}"
       unit_str = get_unit(appended_unit).join('.')
       x = "#{salty}.#{unit_str}"
-      binding.pry
       last_hex = (Digest::SHA1.hexdigest(x))[0..14]
-      binding.pry
+      p last_hex.to_i(16)
       last_hex.to_i(16)
     end
 
@@ -98,17 +97,13 @@ module PlanOut
         num_draws = choices.length
       end
 
-      binding.pry
       n = choices.length
       while n > 0
         n -= 1
-        binding.pry
         i = get_hash([n]) % (n+1)
-        binding.pry
         choices[i], choices[n] = choices[n], choices[i]
       end
   
-      binding.pry
       choices.slice(0...num_draws)
     end
   end
