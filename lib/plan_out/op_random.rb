@@ -16,8 +16,8 @@ module PlanOut
       salty = "#{@mapper.experiment_salt}.#{salt}"
       unit_str = get_unit(appended_unit).join('.')
       x = "#{salty}.#{unit_str}"
-      last_hex = (Digest::SHA1.hexdigest(x))
-      last_hex.to_i
+      last_hex = (Digest::SHA1.hexdigest(x))[0..14]
+      last_hex.to_i(16)
     end
 
     def get_uniform(min_val = 0.0, max_val = 1.0, appended_unit = nil)
