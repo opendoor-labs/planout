@@ -16,6 +16,7 @@ module PlanOut
       salty = "#{@mapper.experiment_salt}.#{salt}"
       unit_str = get_unit(appended_unit).join('.')
       x = "#{salty}.#{unit_str}"
+      binding.pry
       last_hex = (Digest::SHA1.hexdigest(x))[0..14]
       last_hex.to_i(16)
     end
